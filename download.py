@@ -118,7 +118,7 @@ if __name__ == '__main__':
     #download('https://cn2.zuidadianying.com/20190207/7hFXzH8Z/index.m3u8', 'fcrs')  # 飞驰人生
     #get_movie_url_for_thunder('https://cn2.zuidadianying.com/20190207/7hFXzH8Z/index.m3u8', 'fcrs.txt') # 飞驰人生
 
-    #download('https://cn2.zuidadianying.com/20190207/Nj4iG5WQ/index.m3u8', 'xxjzw')  # 新喜剧之王
-    #get_movie_url_for_thunder('https://cn2.zuidadianying.com/20190207/Nj4iG5WQ/index.m3u8', 'xxjzw.txt') # 新喜剧之王
+    #download('https://cn2.zuidadianying.com/20190207/v6q1kRtN/index.m3u8', 'xxjzw')  # 新喜剧之王
+    #get_movie_url_for_thunder('https://cn2.zuidadianying.com/20190207/v6q1kRtN/index.m3u8', 'xxjzw.txt') # 新喜剧之王
 
     print 'all finish'
