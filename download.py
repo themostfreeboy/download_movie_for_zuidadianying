@@ -21,7 +21,7 @@ def get_movie_list_url(base_url):
         return ''
 
 # 对下载失败的url进行一定次数的重试
-def retry_downloadfile(retry_list, retry_times):
+def retry_downloadfile(retry_list, retry_times, out_dir_name):
     if len(retry_list) == 0:
         print 'all urls download success'
         return
@@ -30,11 +30,14 @@ def retry_downloadfile(retry_list, retry_times):
         for url in retry_list:
             print url
         return
+    filename_pre_str = os.getcwd() + '/' + out_dir_name + '/'
     retry_list_new = []
     for url in retry_list:
         try:
+            temp_index = url.rfind('/')
+            filename = url[temp_index + 1:]
             r = requests.get(url=url, timeout=(3.5, 30))
-            with open(url, 'wb') as f:
+            with open(filename_pre_str + filename, 'wb') as f:
                 f.write(r.content)
         except Exception, e:
             retry_list_new.append(url)
@@ -59,7 +62,7 @@ def downloadfile(movie_list_url,out_dir_name):
             except Exception, e:
                 retry_list.append(base_str + line)
                 print type(e), ':', e
-    retry_downloadfile(retry_list, 10)
+    retry_downloadfile(retry_list, 10, out_dir_name)
 
 # windows下合并多个文件到一个文件
 def combine_files(out_dir_name):
@@ -106,13 +109,13 @@ def get_movie_url_for_thunder(base_url,out_txt_name):
 
 if __name__ == '__main__':
 
-    #download('https://cn2.zuidadianying.com/20190207/Nj4iG5WQ/index.m3u8', 'lldq') # 流浪地球
+    download('https://cn2.zuidadianying.com/20190207/Nj4iG5WQ/index.m3u8', 'lldq') # 流浪地球
     #get_movie_url_for_thunder('https://cn2.zuidadianying.com/20190207/Nj4iG5WQ/index.m3u8', 'lldq.txt') # 流浪地球
 
     #download('https://cn2.zuidadianying.com/20190207/HAirIKlM/index.m3u8', 'fkdwxr')  # 疯狂的外星人
     #get_movie_url_for_thunder('https://cn2.zuidadianying.com/20190207/HAirIKlM/index.m3u8', 'fkdwxr.txt') # 疯狂的外星人
 
-    download('https://cn2.zuidadianying.com/20190207/7hFXzH8Z/index.m3u8', 'fcrs')  # 飞驰人生
+    #download('https://cn2.zuidadianying.com/20190207/7hFXzH8Z/index.m3u8', 'fcrs')  # 飞驰人生
     #get_movie_url_for_thunder('https://cn2.zuidadianying.com/20190207/7hFXzH8Z/index.m3u8', 'fcrs.txt') # 飞驰人生
 
     #download('https://cn2.zuidadianying.com/20190207/Nj4iG5WQ/index.m3u8', 'xxjzw')  # 新喜剧之王
