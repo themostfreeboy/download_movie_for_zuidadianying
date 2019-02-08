@@ -82,8 +82,8 @@ def get_movie_url_for_thunder(base_url,out_txt_name):
 
 if __name__ == '__main__':
 
-    #download('https://cn2.zuidadianying.com/20190207/Nj4iG5WQ/index.m3u8', 'llxq') # 流浪星球
-    #get_movie_url_for_thunder('https://cn2.zuidadianying.com/20190207/Nj4iG5WQ/index.m3u8', 'llxq.txt') # 流浪星球
+    #download('https://cn2.zuidadianying.com/20190207/Nj4iG5WQ/index.m3u8', 'lldq') # 流浪地球
+    #get_movie_url_for_thunder('https://cn2.zuidadianying.com/20190207/Nj4iG5WQ/index.m3u8', 'lldq.txt') # 流浪地球
 
     download('https://cn2.zuidadianying.com/20190207/HAirIKlM/index.m3u8', 'fkdwxr')  # 疯狂的外星人
     #get_movie_url_for_thunder('https://cn2.zuidadianying.com/20190207/HAirIKlM/index.m3u8', 'fkdwxr.txt') # 疯狂的外星人
